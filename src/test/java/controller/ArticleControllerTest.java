@@ -1,8 +1,12 @@
 package controller;
 
+import model.Article;
 import org.junit.jupiter.api.*;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -75,4 +79,43 @@ class ArticleControllerTest {
     }
 
     //testing retrieveNewestArticles
+    @Test
+    public void retrieveNewestArticles_query_articles_failed_return_num_0() {
+        when(mock_dbUtil.getCurrentArticles(anyInt(), anyInt())).thenReturn(null);
+        assertEquals(0, articleController.retrieveNewestArticles(0,100).size());
+    }
+    @Test
+    public void retrieveNewestArticles_return_correct_number_of_article_which_id_greater_than_front(){
+        Article a1=new Article(),a2=new Article(),a3=new Article(),a4=new Article(),a5=new Article();
+        a1.setArticleID("1");
+        a2.setArticleID("2");
+        a3.setArticleID("3");
+        a4.setArticleID("4");
+        a5.setArticleID("5");
+        ArrayList<Article> al = new ArrayList<Article>();
+        al.add(a5);al.add(a4);
+        when(mock_dbUtil.getCurrentArticles(3, 10)).thenReturn(al);
+        assertAll(
+                ()->{assertEquals(2,articleController.retrieveNewestArticles(3,10).size());},
+                ()->{assertEquals("5",articleController.retrieveNewestArticles(3,10).get(0).getArticleID());},
+                ()->{assertEquals("4",articleController.retrieveNewestArticles(3,10).get(1).getArticleID());}
+                );
+    }
+    @Test
+    public void retrieveNewestArticles_return_correct_number_of_article_which_maximum_equals_to_num(){
+        Article a1=new Article(),a2=new Article(),a3=new Article(),a4=new Article(),a5=new Article();
+        a1.setArticleID("1");
+        a2.setArticleID("2");
+        a3.setArticleID("3");
+        a4.setArticleID("4");
+        a5.setArticleID("5");
+        ArrayList<Article> al = new ArrayList<Article>();
+        al.add(a5);al.add(a4);
+        when(mock_dbUtil.getCurrentArticles(1, 2)).thenReturn(al);
+        assertAll(
+                ()->{assertEquals(2,articleController.retrieveNewestArticles(1,2).size());},
+                ()->{assertEquals("5",articleController.retrieveNewestArticles(1,2).get(0).getArticleID());},
+                ()->{assertEquals("4",articleController.retrieveNewestArticles(1,2).get(1).getArticleID());}
+        );
+    }
 }
