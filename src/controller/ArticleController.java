@@ -11,6 +11,10 @@ public class ArticleController {
         dbutil = new DataBaseUtility();
     }
 
+    public ArticleController( DataBaseUtility dbutil) {
+        this.dbutil = dbutil;
+    }
+
     public boolean publishAnArticle(String userID, String content, String imgUrl){
         Article article = new Article();
         article.setUserID(userID);
