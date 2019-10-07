@@ -52,4 +52,27 @@ class ArticleControllerTest {
         assertEquals(false, articleController.publishAnArticle("1","content","."));
     }
 
+    //testing for deleteAnArticle
+    @Test
+    @DisplayName("deleteAnArticle: ID不能为空")
+    public void deleteAnArticle_Id_should_not_be_null(){
+        when(mock_dbUtil.isArticleExisted(null)).thenReturn(false);
+        assertEquals(false, articleController.deleteAnArticle(null));
+    }
+    @Test
+    @DisplayName("deleteAnArticle: 待删除的article存在")
+    public void deleteAnArticle_with_existed_article(){
+        when(mock_dbUtil.isArticleExisted("1")).thenReturn(true);
+        when(mock_dbUtil.deleteArticle("1")).thenReturn(true);
+        assertEquals(true, articleController.deleteAnArticle("1"));
+    }
+    @Test
+    @DisplayName("deleteAnArticle: 待删除的article不存在")
+    public void deleteAnArticle_with_none_existed_article(){
+        when(mock_dbUtil.isArticleExisted("1")).thenReturn(false);
+        when(mock_dbUtil.deleteArticle("1")).thenReturn(true);
+        assertEquals(false, articleController.deleteAnArticle("1"));
+    }
+
+    //testing retrieveNewestArticles
 }
