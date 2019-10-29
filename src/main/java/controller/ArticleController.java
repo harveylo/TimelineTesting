@@ -3,8 +3,16 @@ package controller;
 import model.Article;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ArticleController {
+
+    public static void main(String[] args) {
+        ArticleController a = new ArticleController();
+        List<Article> as = a.retrieveNewestArticles(1,10);
+        System.out.println(1);
+    }
+
     DataBaseUtility dbutil;
 
     public ArticleController() {

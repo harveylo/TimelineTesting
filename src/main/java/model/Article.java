@@ -28,7 +28,8 @@ public class Article {
         return timeStamp;
     }
     public void setTimeStamp(String pushTime) {
-        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        System.out.println(pushTime);
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.0");
         this.timeStamp = getTimeDif(LocalDateTime.parse(pushTime,df));
     }
 

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="100ff3cb-9e3a-4400-a6a0-50a1e7a42b61" name="Default Changelist" comment="" />
+    <list default="true" id="100ff3cb-9e3a-4400-a6a0-50a1e7a42b61" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/DataBaseUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DataBaseUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Article.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +35,13 @@
   <component name="ProjectId" id="1Rsm4ImkMYFpE7N3zIVgzx9fuq8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -59,7 +68,33 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ArticleTest">
+  <component name="RunManager" selected="Application.ArticleController">
+    <configuration name="ArticleController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controller.ArticleController" />
+      <module name="Testing-Timeline" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataBaseUtility" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controller.DataBaseUtility" />
+      <module name="Testing-Timeline" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ArticleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing-Timeline" />
       <extension name="coverage">
@@ -71,38 +106,6 @@
       <option name="PACKAGE_NAME" value="model" />
       <option name="MAIN_CLASS_NAME" value="model.ArticleTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ArticleTest.set_article_to_five_hours_before" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Testing-Timeline" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.ArticleTest" />
-      <option name="METHOD_NAME" value="set_article_to_five_hours_before" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ArticleTest.set_article_to_five_min_before" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Testing-Timeline" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.ArticleTest" />
-      <option name="METHOD_NAME" value="set_article_to_five_min_before" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,19 +143,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ArticleTest.set_article_to_five_min_before" />
-      <item itemvalue="JUnit.ArticleTest.set_article_to_five_hours_before" />
       <item itemvalue="JUnit.ArticleTest.set_article_to_one_month_before" />
       <item itemvalue="JUnit.ArticleTest.set_article_to_one_year_before" />
       <item itemvalue="JUnit.ArticleTest" />
+      <item itemvalue="Application.DataBaseUtility" />
+      <item itemvalue="Application.ArticleController" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ArticleController" />
+        <item itemvalue="Application.DataBaseUtility" />
         <item itemvalue="JUnit.ArticleTest" />
         <item itemvalue="JUnit.ArticleTest.set_article_to_one_year_before" />
         <item itemvalue="JUnit.ArticleTest.set_article_to_one_month_before" />
-        <item itemvalue="JUnit.ArticleTest.set_article_to_five_min_before" />
-        <item itemvalue="JUnit.ArticleTest.set_article_to_five_hours_before" />
       </list>
     </recent_temporary>
   </component>
@@ -170,6 +173,7 @@
       <workItem from="1570514086116" duration="2676000" />
       <workItem from="1570795813153" duration="98000" />
       <workItem from="1572243700181" duration="57000" />
+      <workItem from="1572244108779" duration="19338000" />
     </task>
     <servers />
   </component>
