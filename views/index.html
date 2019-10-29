@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Timeline</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="ctrl.js"></script>
+    <script>
+        var imageStatus = false;
+        var imageCode = "";
+        $(function(){
+            var input = document.getElementById("imgInput");
+            if (typeof (FileReader) === 'undefined') {
+                alert("not supported");
+                input.setAttribute('disabled', 'disabled');
+            } else {
+                //开始监听
+                input.addEventListener('change', readFile, false);
+            }
+            function readFile(){
+                var file = this.files[0];
+                //判断是否是图片类型
+                if(!/image\/\w+/.test(file.type)){
+                    alert("picture?");
+                    return false;
+                }
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function (e) {
+                    console.log(this.result);
+                    imageCode = this.result;
+                }
+                imageStatus = true;
+            }
+        })
+        $(document).ready(function(){
+            $("#postText").click(function(event) {
+                event.preventDefault();
+                var pUserID = "1";
+                var pContent = ""+document.getElementById("textInput").value;
+                if(imageStatus){
+                    $.ajax({
+                        type : "POST",
+                        data : JSON.stringify({
+                            userID: pUserID,
+                            content: pContent,
+                            image:imageCode}),
+                        datatype : "json",
+                        contentType: 'application/json;charset=utf-8',
+                        url : "http://localhost:8080/timeline/article/push",
+                        success: function(data){
+                            if (data.message == "true") {
+                                alert("发表成功");
+                                window.location.href = "http://localhost:8080/timeline/views/index.html";
+                            } else {
+                                alert("未发表成功，请重试");
+                            }
+                        },
+                        error: function(xhr,status,err){
+                            alert(xhr.status);
+                            alert(xhr.readyState);
+                            alert("连接失败！ " + status + ": " + err.toString());
+                        }
+                    })}
+                else{
+                    $.ajax({
+                        type : "POST",
+                        data : JSON.stringify({
+                            userID: pUserID,
+                            content: pContent}),
+                        datatype : "json",
+                        contentType: 'application/json;charset=utf-8',
+                        url : "http://localhost:8080/timeline/article/push",
+                        success: function(data){
+                            if (data.message == "true") {
+                                alert("发表成功");
+                                window.location.href = "http://localhost:8080/timeline/views/index.html";
+                            } else {
+                                alert("未发表成功，请重试");
+                            }
+                        },
+                        error: function(xhr,status,err){
+                            alert(xhr.status);
+                            alert(xhr.readyState);
+                            alert("连接失败！ " + status + ": " + err.toString());
+                        }
+                    })}
+            })
+        })
+    </script>
+</head>
+
+<body onload="Search()">
+    <div id="Timeline">
+        <header>
+            <h1>时 间 线 应 用</h1>
+            <h3>用户: <script>document.write(sessionStorage.nickname)</script></h3>
+        </header>
+
+        <table align="center">
+            <tr>
+                <td colspan="2">
+                    <!--Text-->
+                    <textarea id="textInput" cols="90" rows="12" wrap="hard" placeholder=""></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <!--Picture-->
+                    <a href="javascript:;" class="feat001">
+                        <input type="file" name="" id="imgInput">图片
+                    </a>
+                </td>
+                <td align="left">
+                    <!-- Publish -->
+                    <button class="feat001" id="postText">发布</button>
+                </td>
+            </tr>
+        </table>
+
+        <hr style="height:3px;border:none;border-top:3px solid black;" />  
+
+        <!-- Main -->
+        <div id="contentList">
+        </div>
+        <div align="center" >
+            <button class="feat001" onclick="loadMore()">加载更多</button>
+        </div>
+    </div>
+</body>
+
+</html>
