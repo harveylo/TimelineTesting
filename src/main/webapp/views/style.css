@@ -1,0 +1,54 @@
+#Timeline{
+    margin-right: auto;  margin-left: auto; 
+    width:95%
+}
+#Timeline header {
+    background-color:rgb(68, 68, 68);
+    color: #fff;
+    text-align:center;
+    padding:10px;
+}
+
+.feat001 {
+    position: relative;
+    display: inline-block;
+    background: rgb(68, 68, 68);
+    border: 1px ridge black;
+    border-radius: 4px;
+    padding: 4px 12px;
+    color: white;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+.feat001 input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.feat001:hover {
+    background: white;
+    border-color: black;
+    color: black;
+    text-decoration: none;
+}
+
+
+.SingleCellFormat{
+    height:auto;
+    padding-top:5px;
+    border-bottom-style: outset;
+    padding-bottom:5px;
+}
+.timeFormat{
+    margin-top:5px;
+    color:black;
+    text-align: right;
+}
+.nicknameFormat{
+    margin-top:5px;
+    color:black;
+    text-align: left;
+}
