@@ -105,7 +105,7 @@ public class ArticleController {
         Article article = new Article();
         article.setArticleID(articleID);
         if(!dbutil.isArticleExisted(article.getArticleID())){
-            jsonMsg.setData(false);
+            jsonMsg.setCode("404");
             return jsonMsg;
         }
         boolean suc = dbutil.deleteArticle(article.getArticleID());
