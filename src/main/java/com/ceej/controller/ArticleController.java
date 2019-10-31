@@ -75,11 +75,11 @@ public class ArticleController {
         article.setContent(content);
         article.setImageURL(imgUrl);
         if(!dbutil.isUserExisted(userID)){
-            jsonMsg.setData(false);
+            jsonMsg.setCode("404");
             return jsonMsg;
         }
         if(!dbutil.addArticle(article.getUserID(), article.getContent(), article.getImageURL())) {
-            jsonMsg.setData(false);
+            jsonMsg.setCode("404");
             return jsonMsg;
         }
         jsonMsg.setData(true);
