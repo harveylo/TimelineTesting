@@ -21,13 +21,15 @@ import java.util.Random;
 public class ArticleController {
 
     DataBaseUtility dbutil;
+    FileOperator fileOperator;
 
     public ArticleController() {
         dbutil = new DataBaseUtility();
+        fileOperator = new FileOperator();
     }
 
-    public ArticleController( DataBaseUtility dbutil) {
-        this.dbutil = dbutil;
+    public ArticleController( DataBaseUtility dbutil, FileOperator fop) {
+        this.dbutil = dbutil;fileOperator = fop;
     }
 
     public boolean hasJsonKey(JSONObject json, String key){
@@ -38,7 +40,6 @@ public class ArticleController {
     @RequestMapping(value="/ArticlePublish",method= RequestMethod.POST)
     @ResponseBody
     public JsonMsg publishAnArticle(@RequestBody String json){
-        FileOperator fileOperator = new FileOperator();
 
         String userID; String content; String imgData="";String imgUrl="";
         JSONObject object = JSONObject.fromObject(json);
@@ -65,7 +66,8 @@ public class ArticleController {
             String type= fileOperator.getImage(imgData, imgname);
             if (type != "false") imgUrl= url+type;
             else {
-                imgUrl="";
+                jsonMsg.setCode("404");
+                return jsonMsg;
             }
         }
 
