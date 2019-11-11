@@ -8,8 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f3a5d205-b296-4adc-ac22-61989e42fc71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceej/controller/DataBaseUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceej/controller/DataBaseUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ceej/controller/DataBaseUtilityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ceej/controller/DataBaseUtilityTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -281,7 +279,7 @@
       <workItem from="1572423261694" duration="16978000" />
       <workItem from="1572501508233" duration="5860000" />
       <workItem from="1572508586628" duration="2986000" />
-      <workItem from="1573449840938" duration="15896000" />
+      <workItem from="1573449840938" duration="17207000" />
     </task>
     <task id="LOCAL-00001" summary="change the environment">
       <created>1573450730941</created>
@@ -318,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573464887615</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="全部函数测试完成">
+      <created>1573488682771</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1573488682771</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,6 +348,7 @@
     <MESSAGE value="看起来好像成功的测了第一个函数了 接下去全部测完" />
     <MESSAGE value="check the add user function, has 1 test fail" />
     <MESSAGE value="还剩最后两个函数要测" />
-    <option name="LAST_COMMIT_MESSAGE" value="还剩最后两个函数要测" />
+    <MESSAGE value="全部函数测试完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="全部函数测试完成" />
   </component>
 </project>
