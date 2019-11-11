@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f3a5d205-b296-4adc-ac22-61989e42fc71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +32,11 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="ceej7" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="Testing-Timeline" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -248,9 +254,9 @@
       <item itemvalue="JUnit.ArticleControllerTest" />
       <item itemvalue="JUnit.DataBaseUtilityTest.check_user_exist" />
       <item itemvalue="JUnit.DataBaseUtilityTest.add_user" />
-      <item itemvalue="Tomcat Server.localhost" />
       <item itemvalue="JUnit.DataBaseUtilityTest.delete_article" />
       <item itemvalue="JUnit.DataBaseUtilityTest.get_image_url_of_article" />
+      <item itemvalue="Tomcat Server.localhost" />
     </list>
     <recent_temporary>
       <list>
