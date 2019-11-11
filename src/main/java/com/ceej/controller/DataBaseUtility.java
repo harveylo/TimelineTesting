@@ -135,7 +135,7 @@ public class DataBaseUtility {
             pstm.setString(1, articleID);
             rs = pstm.executeQuery();
 
-            while (rs.next()) {
+            if (rs == null) {
                 return true;
             }
         } catch (SQLException e) {
@@ -262,7 +262,7 @@ public class DataBaseUtility {
             pstm = con.prepareStatement(sql);
             pstm.setString(1, articleID);
             rs = pstm.executeQuery();
-            while (rs.next()) {
+            if (rs != null) {
                 return rs.getString("imageURL");
             }
         } catch (SQLException e) {

@@ -204,23 +204,19 @@ class DataBaseUtilityTest {
 
     @Test
     void delete_article() throws SQLException {
-        String userId = "1";
-        String content = "this is an article for testing.";
-        String imageUrl = "res/test1.jpg";
+        String articleId = "1";
 
         when(connection.prepareStatement(anyString())).thenReturn(statement);
 
-        boolean success = dao.addArticle(userId,content,imageUrl);
+        boolean success = dao.deleteArticle(articleId);
         assertTrue(success);
 
         ArgumentCaptor<String> stringArgumentCaptor = ArgumentCaptor.forClass(String.class);
-        ArgumentCaptor<Integer> integerArgumentCaptor = ArgumentCaptor.forClass(Integer.class);
 
-        verify(statement, times(4)).setString(integerArgumentCaptor.capture(), stringArgumentCaptor.capture());
+        verify(statement, times(2)).setString(eq(1), stringArgumentCaptor.capture());
 
+        assertEquals("1",stringArgumentCaptor.getAllValues().get(0));
         assertEquals("1",stringArgumentCaptor.getAllValues().get(1));
-        assertEquals("this is an article for testing.",stringArgumentCaptor.getAllValues().get(2));
-        assertEquals("res/test1.jpg",stringArgumentCaptor.getAllValues().get(3));
 
         verify(statement).executeUpdate();
 //        这个可以不调用吗 不提交的话好像是不会修改数据库的吧
@@ -230,7 +226,29 @@ class DataBaseUtilityTest {
     }
 
     @Test
-    void get_image_url_of_article(){
+    void get_image_url_of_article() throws SQLException {
+        String articleId = "1";
+        when(connection.prepareStatement(anyString())).thenReturn(statement);
+        String result = dao.getImageUrlOfArticle(articleId);
+        assertNull(result);
 
+        ArgumentCaptor<String> stringArgumentCaptor = ArgumentCaptor.forClass(String.class);
+
+        verify(statement,times(2)).setString(eq(1), stringArgumentCaptor.capture());
+
+        assertEquals("1", stringArgumentCaptor.getAllValues().get(0));
+        assertEquals("1", stringArgumentCaptor.getAllValues().get(1));
+
+        /*
+        * org.mockito.exceptions.verification.TooManyActualInvocations:
+preparedStatement.close();
+Wanted 1 time:
+-> at com.ceej.controller.DataBaseUtilityTest.get_image_url_of_article(DataBaseUtilityTest.java:242)
+But was 2 times:
+-> at com.ceej.controller.DataBaseUtility.closeConnection(DataBaseUtility.java:32)
+-> at com.ceej.controller.DataBaseUtility.closeConnection(DataBaseUtility.java:32)
+        * */
+        verify(statement).close();
+        verify(connection).close();
     }
 }
