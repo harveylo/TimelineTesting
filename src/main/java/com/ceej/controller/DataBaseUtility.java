@@ -9,10 +9,10 @@ import java.util.ArrayList;
 public class DataBaseUtility {
 
     // connection
-    public final static String db_url = "jdbc:mysql://localhost:3306/timeline?useSSL=false&serverTimezone=UTC&useUnicode=true&amp&characterEncoding=UTF-8";
+    public final static String db_url = "jdbc:mysql://localhost:3306/anothertimeline?useSSL=false&serverTimezone=UTC&useUnicode=true&amp&characterEncoding=UTF-8";
     public final static String res_url= "localhost:8080/timeline/res/"; //img url
-    public final static String user   = "root"; //user name
-    public final static String pwd    = "root"; //user pwd
+    public final static String user   = "temp"; //user name
+    public final static String pwd    = "123456"; //user pwd
     private Connection createConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

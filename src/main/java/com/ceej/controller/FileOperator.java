@@ -1,6 +1,7 @@
 package com.ceej.controller;
 
 import org.apache.commons.codec.binary.Base64;
+import org.springframework.util.ResourceUtils;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -31,7 +32,8 @@ public class FileOperator {
                 }
             }
             String realPath=DataBaseUtility.res_url;
-            String imgFilePath = "C:/Users/ceej_/Documents/Libraries/apache-tomcat-8.5/webapps/timeline/res/"+ imgname + type;
+            String path = ResourceUtils.getURL("classpath:").getPath();
+            String imgFilePath = path + "res/"+ imgname + type;
 
             OutputStream out = new FileOutputStream(imgFilePath);
             try {
