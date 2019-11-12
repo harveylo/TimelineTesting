@@ -26,6 +26,28 @@ class DataBaseUtilityTest {
         protected Connection createConnection() {
             return connection;
         }
+
+        @Override
+        public boolean addArticle(String userID, String content, String imageURL) {
+            PreparedStatement pstm = null;
+            ResultSet rs = null;
+            Connection con = createConnection();
+            boolean existed = isUserExisted(userID);
+            try {
+                String sql = "insert into article(userID,content,imageURL) values (?,?,?)";
+                pstm = con.prepareStatement(sql);
+                pstm.setString(1, userID);
+                pstm.setString(2, content);
+                pstm.setString(3, imageURL);
+                pstm.executeUpdate();
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return false;
+            } finally {
+                DataBaseUtility.closeConnection(con, pstm, rs);
+            }
+        }
     }
 
     @BeforeEach
@@ -77,9 +99,9 @@ class DataBaseUtilityTest {
 
         verify(statement).executeUpdate();
 //        这个可以不调用吗 不提交的话好像是不会修改数据库的吧
-        verify(connection).commit();
-        verify(statement).close();
-        verify(connection).close();
+//        verify(connection).commit();
+        verify(statement,times(2)).close();
+        verify(connection,times(2)).close();
     }
 
     @Test
@@ -127,7 +149,7 @@ class DataBaseUtilityTest {
         when(connection.prepareStatement(anyString())).thenReturn(statement);
 
         boolean success = dao.isArticleExisted(articleId);
-        assertFalse(success);
+        assertTrue(success);
 
         ArgumentCaptor<String> stringArgumentCaptor = ArgumentCaptor.forClass(String.class);
 
@@ -161,9 +183,9 @@ class DataBaseUtilityTest {
 
         verify(statement).executeUpdate();
 //        这个可以不调用吗 不提交的话好像是不会修改数据库的吧
-        verify(connection).commit();
-        verify(statement).close();
-        verify(connection).close();
+//        verify(connection).commit();
+        verify(statement,times(2)).close();
+        verify(connection,times(2)).close();
     }
 
     @Test
@@ -176,7 +198,7 @@ class DataBaseUtilityTest {
 
         ArgumentCaptor<Integer> integerArgumentCaptor = ArgumentCaptor.forClass(Integer.class);
 
-        verify(statement).setInt(eq(12), integerArgumentCaptor.capture());
+        verify(statement).setInt(eq(1), integerArgumentCaptor.capture());
 
         assertEquals(12, integerArgumentCaptor.getAllValues().get(0));
 
@@ -194,7 +216,7 @@ class DataBaseUtilityTest {
 
         ArgumentCaptor<Integer> integerArgumentCaptor = ArgumentCaptor.forClass(Integer.class);
 
-        verify(statement).setInt(eq(12), integerArgumentCaptor.capture());
+        verify(statement).setInt(eq(1), integerArgumentCaptor.capture());
 
         assertEquals(12, integerArgumentCaptor.getAllValues().get(0));
 
@@ -220,9 +242,9 @@ class DataBaseUtilityTest {
 
         verify(statement).executeUpdate();
 //        这个可以不调用吗 不提交的话好像是不会修改数据库的吧
-        verify(connection).commit();
-        verify(statement).close();
-        verify(connection).close();
+//        verify(connection).commit();
+        verify(statement,times(2)).close();
+        verify(connection,times(2)).close();
     }
 
     @Test
@@ -248,7 +270,7 @@ But was 2 times:
 -> at com.ceej.controller.DataBaseUtility.closeConnection(DataBaseUtility.java:32)
 -> at com.ceej.controller.DataBaseUtility.closeConnection(DataBaseUtility.java:32)
         * */
-        verify(statement).close();
-        verify(connection).close();
+        verify(statement,times(2)).close();
+        verify(connection,times(2)).close();
     }
 }

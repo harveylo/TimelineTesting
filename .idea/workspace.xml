@@ -7,8 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3a5d205-b296-4adc-ac22-61989e42fc71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceej/controller/DataBaseUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceej/controller/DataBaseUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ceej/controller/DataBaseUtilityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ceej/controller/DataBaseUtilityTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,9 +99,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DataBaseUtilityTest.get_image_url_of_article">
-    <configuration name="ArticleControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Timeline" />
+  <component name="RunManager" selected="JUnit.DataBaseUtilityTest.add_article">
+    <configuration name="DataBaseUtilityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Testing-Timeline" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.ceej.controller.*" />
@@ -107,8 +109,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.ceej.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.ceej.controller.ArticleControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="com.ceej.controller.DataBaseUtilityTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataBaseUtilityTest.add_article" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Testing-Timeline" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ceej.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ceej.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.ceej.controller.DataBaseUtilityTest" />
+      <option name="METHOD_NAME" value="add_article" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,22 +142,6 @@
       <option name="PACKAGE_NAME" value="com.ceej.controller" />
       <option name="MAIN_CLASS_NAME" value="com.ceej.controller.DataBaseUtilityTest" />
       <option name="METHOD_NAME" value="add_user" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DataBaseUtilityTest.check_user_exist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Testing-Timeline" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ceej.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ceej.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.ceej.controller.DataBaseUtilityTest" />
-      <option name="METHOD_NAME" value="check_user_exist" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -251,20 +253,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ArticleControllerTest" />
-      <item itemvalue="JUnit.DataBaseUtilityTest.check_user_exist" />
       <item itemvalue="JUnit.DataBaseUtilityTest.add_user" />
       <item itemvalue="JUnit.DataBaseUtilityTest.delete_article" />
       <item itemvalue="JUnit.DataBaseUtilityTest.get_image_url_of_article" />
       <item itemvalue="Tomcat Server.localhost" />
+      <item itemvalue="JUnit.DataBaseUtilityTest" />
+      <item itemvalue="JUnit.DataBaseUtilityTest.add_article" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DataBaseUtilityTest.add_article" />
+        <item itemvalue="JUnit.DataBaseUtilityTest" />
         <item itemvalue="JUnit.DataBaseUtilityTest.get_image_url_of_article" />
         <item itemvalue="JUnit.DataBaseUtilityTest.delete_article" />
         <item itemvalue="JUnit.DataBaseUtilityTest.add_user" />
-        <item itemvalue="JUnit.DataBaseUtilityTest.check_user_exist" />
-        <item itemvalue="JUnit.ArticleControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -286,6 +288,7 @@
       <workItem from="1572501508233" duration="5860000" />
       <workItem from="1572508586628" duration="2986000" />
       <workItem from="1573449840938" duration="17207000" />
+      <workItem from="1573524232732" duration="3178000" />
     </task>
     <task id="LOCAL-00001" summary="change the environment">
       <created>1573450730941</created>
@@ -338,6 +341,30 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="range">
+                    <value>
+                      <list>
+                        <option value="HEAD..makise" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
