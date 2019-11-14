@@ -8,6 +8,9 @@
   - Article transaction and related DB function
   - ArticleController Unit Testing
   - Timeline frontend
+- makise - 郭省吾(10175101106)
+  - Some modification in the implementation of ArticleController
+  - DataBaseUtility(Persistent Layer) Unit Testing
 - TODO
 
  
