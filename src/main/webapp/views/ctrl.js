@@ -3,6 +3,8 @@ var showID = 0;
 var userArray = new Array();
 var articleArray = new Array();
 var lastID =0;
+var id = prompt("请输入你的用户id！");
+$("#user_name").val()
 Search = function(){
     $.ajax({
         type : "POST",

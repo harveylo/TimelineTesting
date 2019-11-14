@@ -11,7 +11,9 @@
     <script>
         var imageStatus = false;
         var imageCode = "";
+
         $(function(){
+
             var input = document.getElementById("imgInput");
             if (typeof (FileReader) === 'undefined') {
                 alert("not supported");
@@ -91,7 +93,7 @@
     <div id="Timeline">
         <header>
             <h1>时 间 线 应 用</h1>
-            <h3>用户: Alia</h3>
+            <h3>用户: <output id="user_name" name="userName"></output></h3>
         </header>
 
         <table align="center" >

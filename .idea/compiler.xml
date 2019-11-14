@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Testing-Timeline" />
         <module name="Timeline" />
+        <module name="spring.timeline" />
       </profile>
     </annotationProcessing>
   </component>
