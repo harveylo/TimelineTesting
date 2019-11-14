@@ -2,9 +2,16 @@ package com.ceej.controller;
 
 import com.ceej.model.Article;
 import org.junit.jupiter.api.*;
-import org.mockito.Matchers;
+import org.junit.runner.RunWith;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.RequestBuilder;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import java.io.File;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,27 +19,41 @@ import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@RunWith(SpringRunner.class)
+@WebAppConfiguration
 class ArticleControllerTest {
     DataBaseUtility mock_dbUtil;
     FileOperator mock_fileOp;
     ArticleController articleController;
+
+    private MockMvc mockMvc;
+
+
     @BeforeEach
     public void mocksetup(){
         mock_dbUtil = mock(DataBaseUtility.class);
         mock_fileOp = mock(FileOperator.class);
-        articleController = new ArticleController(mock_dbUtil, mock_fileOp);
+
+
+        mockMvc = MockMvcBuilders.standaloneSetup(new ArticleController(mock_dbUtil, mock_fileOp)).build();
+//        articleController = new ArticleController(mock_dbUtil, mock_fileOp);
     }
 
     // testing for publishAnArticle
     @Test
-    @Disabled
     @DisplayName("publishAnArticle: userID不能为空")
-    public void publishAnArticle_userId_should_not_be_null(){
+    public void publishAnArticle_userId_should_not_be_null() throws Exception{
         when(mock_dbUtil.isUserExisted(null)).thenReturn(false);
         String jsonBase = "{\n" +
                 "\t\"content\":\"随便打的\"\n" +
                 "}";
+        RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/article/tryPost")
+                .contentType(MediaType.parseMediaType("application/json;charset=UTF-8"))
+                .content(jsonBase);
+        MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+        // TODO: 将Response中的Body提取成Json并且在下方嵌入判断
         assertEquals("404", articleController.publishAnArticle(jsonBase).getCode());
     }
     @Test
