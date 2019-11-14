@@ -11,6 +11,10 @@
 - makise - 郭省吾(10175101106)
   - Some modification in the implementation of ArticleController
   - DataBaseUtility(Persistent Layer) Unit Testing
+- yuanfeif - 袁非凡(10175101141)
+  - User information transaction and related DB function
+  - UserController Unit Testing
+  - related frontend modification
 - TODO
 
  

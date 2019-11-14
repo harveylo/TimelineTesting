@@ -7,11 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3a5d205-b296-4adc-ac22-61989e42fc71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceej/controller/DataBaseUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceej/controller/DataBaseUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ceej/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceej/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/ctrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/ctrl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ceej/controller/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ceej/controller/UserControllerTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -260,8 +260,8 @@
       <item itemvalue="JUnit.DataBaseUtilityTest.add_user" />
       <item itemvalue="JUnit.DataBaseUtilityTest.delete_article" />
       <item itemvalue="JUnit.DataBaseUtilityTest.get_image_url_of_article" />
-      <item itemvalue="Tomcat Server.localhost" />
       <item itemvalue="JUnit.ArticleControllerTest (1)" />
+      <item itemvalue="Tomcat Server.localhost" />
     </list>
     <recent_temporary>
       <list>
@@ -363,6 +363,7 @@
     <MESSAGE value="check the add user function, has 1 test fail" />
     <MESSAGE value="还剩最后两个函数要测" />
     <MESSAGE value="全部函数测试完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="全部函数测试完成" />
+    <MESSAGE value="prepare for merging coincidance with master" />
+    <option name="LAST_COMMIT_MESSAGE" value="prepare for merging coincidance with master" />
   </component>
 </project>

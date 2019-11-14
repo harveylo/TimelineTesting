@@ -3,9 +3,21 @@ var showID = 0;
 var userArray = new Array();
 var articleArray = new Array();
 var lastID =0;
-var id = prompt("请输入你的用户id！");
-$("#user_name").val()
+var Userid = prompt("请输入你的用户id！");
+$("#user_name").val();
 Search = function(){
+    jQuery.getJSON(
+        "http://localhost:8080/timeline/user/username",
+        {
+            "id": Userid
+        },
+        function (data) {
+            console.log(data);
+            $("#user_name").val(data.nickname);
+        }
+
+    );
+
     $.ajax({
         type : "POST",
         data : JSON.stringify({
