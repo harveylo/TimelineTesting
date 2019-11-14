@@ -11,6 +11,10 @@
 - makise - 郭省吾(10175101106)
   - Some modification in the implementation of ArticleController
   - DataBaseUtility(Persistent Layer) Unit Testing
+- harveylo - 罗竣夫(10175101221)
+    - some logic modification in the ArticleControllerTest
+    - update the ArticleControllerTest by MvcMock to support
+    running test by url call  
 - TODO
 
  

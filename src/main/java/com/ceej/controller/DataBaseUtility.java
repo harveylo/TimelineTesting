@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class DataBaseUtility {
 
     // connection
-    private final static String db_url = "jdbc:mysql://localhost:3306/anothertimeline?useSSL=false&serverTimezone=UTC" +
+    private final static String db_url = "jdbc:mysql://localhost:3306/timeline?useSSL=false&serverTimezone=UTC" +
             "&useUnicode=true&amp&characterEncoding=UTF-8";
     final static String res_url = "localhost:8080/timeline/res/"; //img url
     private final static String user = "temp"; //user name
