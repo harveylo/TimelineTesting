@@ -8,9 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f3a5d205-b296-4adc-ac22-61989e42fc71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ceej/controller/DataBaseUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ceej/controller/DataBaseUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ceej/controller/DataBaseUtilityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ceej/controller/DataBaseUtilityTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,10 +72,16 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="D:/JAVA/src.zip!/" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -99,7 +106,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DataBaseUtilityTest.add_article">
+  <component name="RunManager" selected="Tomcat Server.localhost">
     <configuration name="DataBaseUtilityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing-Timeline" />
       <extension name="coverage">
@@ -256,9 +263,9 @@
       <item itemvalue="JUnit.DataBaseUtilityTest.add_user" />
       <item itemvalue="JUnit.DataBaseUtilityTest.delete_article" />
       <item itemvalue="JUnit.DataBaseUtilityTest.get_image_url_of_article" />
-      <item itemvalue="Tomcat Server.localhost" />
       <item itemvalue="JUnit.DataBaseUtilityTest" />
       <item itemvalue="JUnit.DataBaseUtilityTest.add_article" />
+      <item itemvalue="Tomcat Server.localhost" />
     </list>
     <recent_temporary>
       <list>
@@ -289,6 +296,11 @@
       <workItem from="1572508586628" duration="2986000" />
       <workItem from="1573449840938" duration="17207000" />
       <workItem from="1573524232732" duration="3178000" />
+      <workItem from="1573656769156" duration="1970000" />
+      <workItem from="1573660282841" duration="204000" />
+      <workItem from="1573660610447" duration="184000" />
+      <workItem from="1573705742146" duration="771000" />
+      <workItem from="1573708664421" duration="898000" />
     </task>
     <task id="LOCAL-00001" summary="change the environment">
       <created>1573450730941</created>
