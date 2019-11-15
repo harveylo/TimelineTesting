@@ -19,6 +19,4 @@
   - User information transaction and related DB function
   - UserController Unit Testing
   - related frontend modification
-- TODO
-
  
