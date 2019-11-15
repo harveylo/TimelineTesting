@@ -89,7 +89,7 @@ public class DataBaseUtility {
             pstm = con.prepareStatement(sql);
             pstm.setString(1, userID);
             rs = pstm.executeQuery();
-            while (rs.next()) {
+            while (rs != null && rs.next()) {
                 if (pwd.equals(rs.getString("password"))) {
                     return true;
                 }
@@ -111,7 +111,7 @@ public class DataBaseUtility {
             pstm = con.prepareStatement(sql);
             pstm.setString(1, userID);
             rs = pstm.executeQuery();
-            while (rs.next()) {
+            while (rs != null && rs.next()) {
                 return rs.getString("nickname");
             }
         } catch (SQLException e) {
@@ -179,7 +179,7 @@ public class DataBaseUtility {
             pstm.setInt(1, front);
             rs = pstm.executeQuery();
             int count = 0;
-            while (rs.next() && (num-- != 0)) {
+            while (rs != null && rs.next() && (num-- != 0)) {
                 Article article = new Article();
                 count++;
                 article.setArticleID(rs.getString("articleID"));
