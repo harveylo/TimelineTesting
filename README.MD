@@ -1,22 +1,24 @@
-# Software Testing Assignment 02
-## Timeline
-- A vertical social message display
-## Testing Goal 
-- Unit Test
-## Team work and individual contribution
-- ceej7 - Weijie(10151511103)
-  - Article transaction and related DB function
-  - ArticleController Unit Testing W/ Mock MVC
-  - Timeline page (views/index.html) frontend
-- makise - 郭省吾(10175101106)
-  - Some modification in the implementation of ArticleController
-  - DataBaseUtility(Persistent Layer) Unit Testing
-- harveylo - 罗竣夫(10175101221)
-    - some logic modification in the ArticleControllerTest
-    - update the ArticleControllerTest by MvcMock to support
-    running test by url call  
-- yuanfeif - 袁非凡(10175101141)
-  - User information transaction and related DB function
-  - UserController Unit Testing
-  - related frontend modification
+# Timeline
+## Testing Code Refactor Content:
+- In ArticleController Test
+    - Updating the testing code to support url testing
+    - Some important testing now have name to display
+    - All testing methods are disabled and tested alone
+    - All testing names are BDD
+    - The testing will be executed in alphabetical order
+    - No exception is handled by trey-catch 
+    - All tests' cyclomatic complexity is 1
+- In DataBaseUtility Test
+    - Updating all the tests with a name displayed
+    - Replace multiple assert calls with assertAll method
+    - The test life circle is per-method
+    - All testing names are BDD now
+- In UserControllerTest
+    - Replace all multiple assert calls with assertAll calls
+    - All tests have names displayed
+    - The life circle is per-method
+- In ArticleTest
+    - The tests will be executed in alphabetical order now
+    - All tests have names displayed
+    - All testing names are BDD
  

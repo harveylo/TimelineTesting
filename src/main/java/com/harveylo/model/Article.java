@@ -1,4 +1,4 @@
-package com.ceej.model;
+package com.harveylo.model;
 
 
 import java.time.Duration;

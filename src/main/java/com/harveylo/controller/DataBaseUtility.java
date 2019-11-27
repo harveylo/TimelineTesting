@@ -1,8 +1,7 @@
-package com.ceej.controller;
+package com.harveylo.controller;
 
-import com.ceej.model.Article;
+import com.harveylo.model.Article;
 
-import java.time.*;
 import java.sql.*;
 import java.util.ArrayList;
 

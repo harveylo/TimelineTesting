@@ -1,8 +1,8 @@
-package com.ceej.controller;
+package com.harveylo.controller;
 
 
-import com.ceej.model.Article;
-import com.ceej.model.JsonMsg;
+import com.harveylo.model.Article;
+import com.harveylo.model.JsonMsg;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.Random;
 
 @Controller

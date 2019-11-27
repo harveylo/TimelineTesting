@@ -1,6 +1,6 @@
-package com.ceej.controller;
+package com.harveylo.controller;
 
-import com.ceej.model.Article;
+import com.harveylo.model.Article;
 import com.jayway.jsonpath.JsonPath;
 import org.junit.jupiter.api.*;
 import org.junit.runner.RunWith;
@@ -10,11 +10,9 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
-import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,6 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @RunWith(SpringRunner.class)
+@TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @WebAppConfiguration
 class ArticleControllerTest {
     DataBaseUtility mock_dbUtil;

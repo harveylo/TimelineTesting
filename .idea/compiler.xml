@@ -9,6 +9,7 @@
         <module name="Testing-Timeline" />
         <module name="Timeline" />
         <module name="spring.timeline" />
+        <module name="TimelineTesting" />
       </profile>
     </annotationProcessing>
   </component>

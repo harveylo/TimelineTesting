@@ -1,4 +1,4 @@
-package com.ceej.model;
+package com.harveylo.model;
 
 public class JsonMsg{
     private String code;

@@ -1,4 +1,4 @@
-package com.ceej.controller;
+package com.harveylo.controller;
 
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.util.ResourceUtils;

@@ -1,19 +1,13 @@
-package com.ceej.controller;
+package com.harveylo.controller;
 
-import com.ceej.model.User;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import java.awt.dnd.DropTarget;
+import com.harveylo.model.User;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-
+@TestInstance(TestInstance.Lifecycle.PER_METHOD)
 class UserControllerTest {
 
     DataBaseUtility mock_dao;
@@ -35,23 +29,33 @@ class UserControllerTest {
     @DisplayName("输入UserId应该与返回的姓名对应")
     public void UserName_should_correspond_to_the_name(){
         user = userController.getUsername("1");
-        assertEquals(user.getNickname(),"Alia");
-        assertEquals(user.getUserID(),"1");
+        assertAll(
+                ()->assertEquals(user.getNickname(),"Alia"),
+                ()->assertEquals(user.getUserID(),"1")
+        );
 
         user = userController.getUsername("2");
-        assertEquals(user.getNickname(),"Ben");
-        assertEquals(user.getUserID(),"2");
+        assertAll(
+                ()->assertEquals(user.getNickname(),"Ben"),
+                ()->assertEquals(user.getUserID(),"2")
+        );
 
         user = userController.getUsername("3");
-        assertEquals(user.getNickname(),"Ceej");
-        assertEquals(user.getUserID(),"3");
+        assertAll(
+                ()->assertEquals(user.getNickname(),"Ceej"),
+                ()->assertEquals(user.getUserID(),"3")
+        );
 
         user = userController.getUsername("12");
-        assertEquals(user.getNickname(),"nuke");
-        assertEquals(user.getUserID(),"12");
+        assertAll(
+                ()->assertEquals(user.getNickname(),"nuke"),
+                ()->assertEquals(user.getUserID(),"12")
+        );
 
         user = userController.getUsername("11");
-        assertEquals(user.getNickname(),"poke");
-        assertEquals(user.getUserID(),"11");
+        assertAll(
+                ()->assertEquals(user.getNickname(),"poke"),
+                ()->assertEquals(user.getUserID(),"11")
+        );
     }
 }

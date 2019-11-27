@@ -1,6 +1,6 @@
-package com.ceej.controller;
+package com.harveylo.controller;
 
-import com.ceej.model.User;
+import com.harveylo.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

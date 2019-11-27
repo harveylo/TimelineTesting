@@ -1,12 +1,12 @@
-package com.ceej.controller;
+package com.harveylo.controller;
 
-import com.ceej.model.User;
-import com.mysql.cj.jdbc.result.ResultSetImpl;
+import com.harveylo.model.User;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.mockito.ArgumentCaptor;
 
-import javax.print.DocFlavor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-
+@TestInstance(TestInstance.Lifecycle.PER_METHOD)
 class DataBaseUtilityTest {
 
     Connection connection = mock(Connection.class);
@@ -56,6 +56,7 @@ class DataBaseUtilityTest {
     }
 
     @Test
+    @DisplayName("User Existence Test")
     void is_user_exist() throws Exception {
         String userId = "1";
 
@@ -77,6 +78,7 @@ class DataBaseUtilityTest {
     }
 
     @Test
+    @DisplayName("Add User Test")
     void add_user() throws SQLException {
         User user = new User();
         user.setNickname("test1");
@@ -93,9 +95,11 @@ class DataBaseUtilityTest {
 
         verify(statement, times(4)).setString(integerArgumentCaptor.capture(), stringArgumentCaptor.capture());
 
-        assertEquals("42",stringArgumentCaptor.getAllValues().get(1));
-        assertEquals("test1",stringArgumentCaptor.getAllValues().get(2));
-        assertEquals("123456",stringArgumentCaptor.getAllValues().get(3));
+        assertAll(
+                ()->assertEquals("42",stringArgumentCaptor.getAllValues().get(1)),
+                ()->assertEquals("test1",stringArgumentCaptor.getAllValues().get(2)),
+                ()->assertEquals("123456",stringArgumentCaptor.getAllValues().get(3))
+        );
 
         verify(statement).executeUpdate();
 //        这个可以不调用吗 不提交的话好像是不会修改数据库的吧
@@ -105,6 +109,7 @@ class DataBaseUtilityTest {
     }
 
     @Test
+    @DisplayName("Correct Password Test")
     void is_pwd_correct() throws SQLException {
         String userId = "1";
         String password = "123456";
@@ -126,6 +131,7 @@ class DataBaseUtilityTest {
     }
 
     @Test
+    @DisplayName("Get Nickname Test")
     void get_nickname() throws SQLException {
         String userId = "1";
         when(connection.prepareStatement(anyString())).thenReturn(statement);
@@ -143,6 +149,7 @@ class DataBaseUtilityTest {
     }
 
     @Test
+    @DisplayName("Article Existence Test")
     void is_article_existed() throws SQLException {
         String articleId = "1";
 
@@ -162,6 +169,7 @@ class DataBaseUtilityTest {
     }
 
     @Test
+    @DisplayName("Add Article Test")
     void add_article() throws SQLException {
         String userId = "1";
         String content = "this is an article for testing.";
@@ -177,9 +185,11 @@ class DataBaseUtilityTest {
 
         verify(statement, times(4)).setString(integerArgumentCaptor.capture(), stringArgumentCaptor.capture());
 
-        assertEquals("1",stringArgumentCaptor.getAllValues().get(1));
-        assertEquals("this is an article for testing.",stringArgumentCaptor.getAllValues().get(2));
-        assertEquals("res/test1.jpg",stringArgumentCaptor.getAllValues().get(3));
+        assertAll(
+                ()->assertEquals("1",stringArgumentCaptor.getAllValues().get(1)),
+                ()->assertEquals("this is an article for testing.",stringArgumentCaptor.getAllValues().get(2)),
+                ()->assertEquals("res/test1.jpg",stringArgumentCaptor.getAllValues().get(3))
+        );
 
         verify(statement).executeUpdate();
 //        这个可以不调用吗 不提交的话好像是不会修改数据库的吧
@@ -189,6 +199,7 @@ class DataBaseUtilityTest {
     }
 
     @Test
+    @DisplayName("Get Current Article Test")
     void get_current_articles() throws SQLException {
         int front = 12;
         int num = 3;
@@ -207,6 +218,7 @@ class DataBaseUtilityTest {
     }
 
     @Test
+    @DisplayName("Get Previous Article Test")
     void get_previous_articles() throws SQLException {
         int tail = 12;
         int num = 3;
@@ -225,6 +237,7 @@ class DataBaseUtilityTest {
     }
 
     @Test
+    @DisplayName("Delete Article Test")
     void delete_article() throws SQLException {
         String articleId = "1";
 
@@ -248,6 +261,7 @@ class DataBaseUtilityTest {
     }
 
     @Test
+    @DisplayName("Get Image Url of An Article Test")
     void get_image_url_of_article() throws SQLException {
         String articleId = "1";
         when(connection.prepareStatement(anyString())).thenReturn(statement);
@@ -260,16 +274,6 @@ class DataBaseUtilityTest {
 
         assertEquals("1", stringArgumentCaptor.getAllValues().get(0));
         assertEquals("1", stringArgumentCaptor.getAllValues().get(1));
-
-        /*
-        * org.mockito.exceptions.verification.TooManyActualInvocations:
-preparedStatement.close();
-Wanted 1 time:
--> at com.ceej.controller.DataBaseUtilityTest.get_image_url_of_article(DataBaseUtilityTest.java:242)
-But was 2 times:
--> at com.ceej.controller.DataBaseUtility.closeConnection(DataBaseUtility.java:32)
--> at com.ceej.controller.DataBaseUtility.closeConnection(DataBaseUtility.java:32)
-        * */
         verify(statement,times(2)).close();
         verify(connection,times(2)).close();
     }
